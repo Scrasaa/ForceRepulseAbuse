@@ -23,8 +23,6 @@ function isValidWep()
         end
     end
 
-    iCharges = 0
-
     return false
 end
 
@@ -32,10 +30,6 @@ hook.Add("Think", "UpdateValues", function()
 
     if ( !IsValid(ply) ) then 
         ply = LocalPlayer()
-    end
-
-    if (isValidWep()) then 
-        wep = ply:GetActiveWeapon()
     end
 
     if (input.IsKeyDown(KEY_PAD_5) && !bToggleDelay ) then 
@@ -93,8 +87,6 @@ if (bToggle) then
             IncreaseCounter()
         end
     end
-else 
-    RunConsoleCommand("-attack2", 1)
 end
 
 end)
