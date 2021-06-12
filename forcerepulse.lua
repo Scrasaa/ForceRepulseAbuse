@@ -13,7 +13,7 @@ local bResetDelay = false
 
 local iCharges = 0
 
---------------------------------------------------- [ MAIN LOGIC ] --------------------------------------------------- check if load script with other gun and then use lightsaber
+--------------------------------------------------- [ MAIN LOGIC ] ---------------------------------------------------
 function isValidWep()
 
     if (IsValid(ply) && ply:Alive()) then 
