@@ -96,6 +96,9 @@ end
 
 end)
 
+-- Overwrite the little stun after you crouch
+hook.Add( "CreateMove", "rb655_lightsaber_no_fall_damage", function( cmd )
+end )
 --------------------------------------------------- [ HUD ] ---------------------------------------------------
 
 local szStatusText = ""
