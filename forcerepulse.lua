@@ -87,6 +87,7 @@ if (bToggle) then
             IncreaseCounter()
         end
     end
+RunConsoleCommand("-attack2", 1) -- rare occasion where it spams +attack2, this is the fix
 end
 
 end)
