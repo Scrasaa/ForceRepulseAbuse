@@ -76,18 +76,19 @@ hook.Add("Think", "LoadRepulse", function()
 
 local force = GetForce()
 
-if ( force <= 0 ) then iCharges = 0 end
+
 
 if (bToggle) then 
     if (isValidWep()) then
         if ( force >= 100 ) then 
             RunConsoleCommand("rb655_select_force", "3") 
             RunConsoleCommand("+attack2", 1)
-        elseif ( force < 3  ) then 
+        elseif ( force < 3 ) then 
             RunConsoleCommand("rb655_select_force", "2")
             RunConsoleCommand("-attack2", 1)
             IncreaseCounter()
         end
+        if ( force <= 0 ) then iCharges = 0 end
     end
 else
     RunConsoleCommand("-attack2", 1) -- rare occasion where it spams +attack2, this is the fix
