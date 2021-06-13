@@ -13,7 +13,7 @@ local bResetDelay = false
 
 local iCharges = 0
 
---------------------------------------------------- [ MAIN LOGIC ] ---------------------------------------------------
+--------------------------------------------------- [ MAIN LOGIC ] --------------------------------------------------- w
 function isValidWep()
 
     if (IsValid(ply) && ply:Alive()) then 
@@ -76,6 +76,8 @@ hook.Add("Think", "LoadRepulse", function()
 
 local force = GetForce()
 
+if ( force <= 0 ) then iCharges = 0 end
+
 if (bToggle) then 
     if (isValidWep()) then
         if ( force >= 100 ) then 
@@ -87,7 +89,8 @@ if (bToggle) then
             IncreaseCounter()
         end
     end
-RunConsoleCommand("-attack2", 1) -- rare occasion where it spams +attack2, this is the fix
+else
+    RunConsoleCommand("-attack2", 1) -- rare occasion where it spams +attack2, this is the fix
 end
 
 end)
